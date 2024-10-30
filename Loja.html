@@ -1,11 +1,24 @@
 <meta charset="UTF-8">
 <script>
-    let preco = parsefloat(prompt("Qual é o valor? R$"))
-    let pagamento
-    let parcelado
-    pagamento = preco - preco/90
-    parcelado = preco/3
-    alert("O preço é: R$")
-    alert("Á vista: R$" + pagamento)
-    alert("Parcelado é: R$" + parcelado)
+function calcularValorPorCliente() {
+    // Lê o valor total da conta
+    const valorTotal = parseFloat(prompt("Digite o valor total da conta (R$):"));
+    
+    // Lê o número de clientes
+    const numeroClientes = parseInt(prompt("Digite o número de clientes:"));
+
+    // Verifica se os inputs são válidos
+    if (!isNaN(valorTotal) && !isNaN(numeroClientes) && numeroClientes > 0) {
+        // Calcula o valor por cliente
+        const valorPorCliente = valorTotal / numeroClientes;
+
+        // Exibe o resultado
+        alert(`Valor da Conta: R$ ${valorTotal.toFixed(2)}\nNúmero de Clientes: ${numeroClientes}\nValor por Cliente: R$ ${valorPorCliente.toFixed(2)}`);
+    } else {
+        alert("Por favor, digite valores válidos.");
+    }
+}
+
+// Chama a função
+calcularValorPorCliente();
 </script>

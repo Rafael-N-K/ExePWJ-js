@@ -1,8 +1,25 @@
 <meta charset="UTF-8">
 <script>
-    let Conta = parsefloat(prompt("Qual é o valor? R$"));
-    let Clientes = parsefloat(prompt("Está em quantos? R$"));
-    let valor
-    valor = Conta / Clientes
-    alert("Você terá que pagar: R$" + valor)
+function calcularOpcoesPagamento() {
+    // Lê o preço do produto
+    const preco = parseFloat(prompt("Digite o preço do produto (R$):"));
+
+    // Verifica se o preço é um número válido
+    if (!isNaN(preco) && preco > 0) {
+        // Calcula o valor à vista com desconto de 10%
+        const desconto = 0.10; // 10%
+        const precoAVista = preco * (1 - desconto);
+        
+        // Calcula o valor em 3 parcelas
+        const valorParcelado = preco / 3;
+
+        // Exibe as opções de pagamento
+        alert(`Preço: R$ ${preco.toFixed(2)}\nÀ Vista: R$ ${precoAVista.toFixed(2)}\nOu 3x de R$: ${valorParcelado.toFixed(2)}`);
+    } else {
+        alert("Por favor, digite um preço válido.");
+    }
+}
+
+// Chama a função
+calcularOpcoesPagamento();
 </script>

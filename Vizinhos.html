@@ -1,9 +1,17 @@
 <meta charset="UTF-8">
 <script>
-    let casa = parseInt(prompt("Qual é a sua casa? "))
-    let vizinhoA
-    let vizinhoB
-    vizinhoA = casa - 1
-    vizinhoB = casa + 1
-    alert("Seu vizinho: " + vizinhoA + " e o outro é: " + vizinhoB)
+function calcularVizinhos() {
+    const casa = parseInt(prompt("Qual é a sua casa? "))
+    if (!isNaN(casa)) {
+        const anterior = casa - 1;
+        const posterior = casa + 1;
+
+        alert(`Número: ${casa}\nVizinhos: ${anterior} e ${posterior}`);
+    } else {
+        alert("Por favor, digite um número válido.");
+    }
+}
+
+calcularVizinhos();
+
 </script>
