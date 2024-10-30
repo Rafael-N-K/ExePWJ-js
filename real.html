@@ -1,0 +1,22 @@
+<meta charset=UTF-8>
+<script>
+function calcularSoma() {
+    // Lê os três valores do usuário
+    const valor1 = parseFloat(prompt("Digite o primeiro valor:"));
+    const valor2 = parseFloat(prompt("Digite o segundo valor:"));
+    const valor3 = parseFloat(prompt("Digite o terceiro valor:"));
+
+    // Calcula a soma
+    const soma = valor1 + valor2 + valor3;
+
+    // Verifica se a soma ultrapassa 80
+    if (soma > 80) {
+        alert(`A soma dos valores é: ${soma}`);
+    } else {
+        alert("Valor da soma inválido.");
+    }
+}
+
+// Chama a função
+calcularSoma();
+</script>
